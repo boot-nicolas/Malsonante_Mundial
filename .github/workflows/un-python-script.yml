@@ -1,0 +1,27 @@
+name: Run Python Script Every Hour
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Ejecuta a la hora en punto de cada hora
+  workflow_dispatch: # Permite la ejecución manual
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'  # Usa la versión de Python que necesites
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run script
+        run: |
+          python path/to/your_script.py
