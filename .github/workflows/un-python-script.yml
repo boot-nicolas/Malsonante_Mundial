@@ -27,4 +27,4 @@ jobs:
       - name: Run script
         run: |
           source venv/bin/activate  # Activa el entorno virtual
-          python path/to/your_script.py
+          python saludo.py
