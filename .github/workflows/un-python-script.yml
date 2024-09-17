@@ -20,8 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python -m venv venv  # Crea el entorno virtual
+          source venv/bin/activate  # Activa el entorno virtual
           pip install -r requirements.txt
 
       - name: Run script
         run: |
+          source venv/bin/activate  # Activa el entorno virtual
           python path/to/your_script.py
